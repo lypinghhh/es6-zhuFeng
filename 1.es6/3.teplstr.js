@@ -52,7 +52,7 @@ let str = descp`${name}今年${age}岁了`
 //rest其他运算符只能作为最后一个参数
 //因为有时候我们希望有自己的拼接模板字符串的逻辑
 function descp2(strings,...values) {
-    //用模板字符串分割的，strings比values永远多1个
+    //用${}模板字符串分割的，strings比values永远多1个
     console.log(strings)
     console.log(values);
     let result = ''
@@ -81,3 +81,10 @@ if(address1.startsWith('http')){
 }
 //repeat方法返回一个新字符串，表示将原字符串重复n次。
 'x'.repeat(3) // "xxx"
+
+//时钟 时间 7：5 补全 07：05
+//ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
+'x'.padStart(5, 'ab') // 'ababx'
+'x'.padStart(4, 'ab') // 'abax'
+'x'.padEnd(5, 'ab') // 'xabab'
+'x'.padEnd(4, 'ab') // 'xaba'
